@@ -15,6 +15,11 @@ main {
   align-items: center;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 .dog-side,
 .cat-side {
   display: flex;
@@ -24,6 +29,16 @@ main {
   justify-content: center;
   align-items: center;
   border: 2px solid pink; /* remove later */
+}
+
+.dog,
+.cat {
+  height: 20%; /* will change this later with new img */
+}
+
+.small-dog,
+.small-cat {
+  width: 20%; /* will change this later with new img */
 }
 
 .gameboard {
@@ -37,7 +52,7 @@ button {
   cursor: pointer;
   border: none;
   background-color: transparent;
-  padding: 50%;
+  padding: 40%;
 }
 
 .top-row,
