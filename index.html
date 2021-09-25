@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Open+Sans&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Cat vs Dog Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <aside class="dog-side">
+      <img class="" src="" alt="dog">
+      <h2>Wins</h2>
+      <h3 id="dogWinCount"></h3>
+    </aside>
+    <main>
+      <header class="turn-display" id="turnDisplay">
+        <h1>Title Text Will Go Here<img src=""></h1>
+      </header>
+      <section class="gameboard">
+        <button class="top-row left-column">Top Left</button>
+        <button class="top-row center">Top Center</button>
+        <button class="top-row right-column">Top Right</button>
+        <button class="center left-column">Center Left</button>
+        <button class="center">Center Center</button>
+        <button class="center right-column">Center Right</button>
+        <button class="left-column">Bottom Left</button>
+        <button>Bottom Center</button>
+        <button class="right-column">Bottom Right</button>
+      </section>
+      <button class="new-game-button" id="newGameBtn">Start New Game</button>
+    </main>
+    <aside class="cat-side">
+      <img class="" src="" alt="cat">
+      <h2>Wins</h2>
+      <h3 id="catWinCount"></h3>
+    </aside>
+    <script type="text/javascript" src="src/player.js"></script>
+    <script type="text/javascript" src="src/game.js"></script>
+    <script type="text/javascript" src="src/main.js"></script>
+  </body>
+</html>

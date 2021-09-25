@@ -1,0 +1,61 @@
+* {
+  font-family: 'Neucha', cursive;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0%
+}
+
+main {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dog-side,
+.cat-side {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid pink; /* remove later */
+}
+
+.gameboard {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  width: 80%; /* may not need this */
+  margin: 5%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 50%;
+}
+
+.top-row,
+.center {
+  border-bottom: 2px solid #000;
+}
+
+.left-column {
+  border-right: 2px solid #000;
+}
+
+.right-column {
+  border-left: 2px solid #000;
+}
+
+.new-game-button {
+  padding: 5%;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin-top: 10%;
+}
