@@ -16,21 +16,29 @@
     </aside>
     <main>
       <h1>Tic-Tac-Toe</h1>
-      <header class="turn-display" id="turnDisplay">
-          <p class="turn-title" id="titleFirstWord">It's</p>
-          <img class="small-dog" src="assets/dog.png" alt="dog">
-          <p class="turn-title" id="titleLastWord">'s Turn</p>
+      <header id="turnDisplay">
+        <p class="title">It's</p>
+        <img class="small-dog" src="assets/dog.png" alt="dog">
+        <p class="title">'s Turn</p>
+      <header id="winnerDisplay">
+        <p class="title">Player</p>
+        <img class="small-dog" src="assets/dog.png" alt="dog">
+        <p class="title">Wins!</p>
       </header>
-      <section class="gameboard">
-        <button class="top-row left-column">Top Left</button>
-        <button class="top-row center">Top Center</button>
-        <button class="top-row right-column">Top Right</button>
-        <button class="center left-column">Center Left</button>
-        <button class="center">Center Center</button>
-        <button class="center right-column">Center Right</button>
-        <button class="left-column">Bottom Left</button>
-        <button>Bottom Center</button>
-        <button class="right-column">Bottom Right</button>
+      <header id="drawDisplay">
+        <p class="title">It's a draw! Play again.</p>
+      </header>
+      <header class=
+      <section class="gameboard" id="gameBtns">
+        <button class="top-row left-column btn">Top Left</button>
+        <button class="top-row center btn">Top Center</button>
+        <button class="top-row right-column btn">Top Right</button>
+        <button class="center left-column btn">Center Left</button>
+        <button class="center btn">Center Center</button>
+        <button class="center right-column btn">Center Right</button>
+        <button class="left-column btn">Bottom Left</button>
+        <button class="btn">Bottom Center</button>
+        <button class="right-column btn">Bottom Right</button>
       </section>
       <button class="new-game-button" id="newGameBtn">Start New Game</button>
     </main>
