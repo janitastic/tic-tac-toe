@@ -6,7 +6,7 @@ Include a summary of the change and which issue is fixed or feature was added
  - 
  -
 
-### Fixes (if any)
+### Features (if any)
  - 
  -
 
