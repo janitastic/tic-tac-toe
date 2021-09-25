@@ -29,3 +29,7 @@ Delete options that are not relevant.
 - [ ] Is it easy for others to read?
 - [ ] Is the syntax consistent? (e.g. use of semicolons, blank lines)
 - [ ] Are commit messages formatted correctly?
+
+### Next Steps:
+ - 
+ -
