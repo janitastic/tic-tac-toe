@@ -13,11 +13,17 @@ main {
   flex: 2;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 header {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
 }
 
 .dog-side,
@@ -33,18 +39,24 @@ header {
 
 .dog,
 .cat {
-  height: 20%; /* will change this later with new img */
+  height: 40%; /* will change this later with new img */
 }
 
 .small-dog,
 .small-cat {
-  width: 20%; /* will change this later with new img */
+  width: 10%; /* will change this later with new img */
+}
+
+.game-dog,
+.game-cat {
+  width: 100%;
 }
 
 .gameboard {
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  width: 80%; /* may not need this */
+  width: 50%;
+  height: 50%;/* may not need this */
   margin: 5%;
 }
 
@@ -52,7 +64,7 @@ button {
   cursor: pointer;
   border: none;
   background-color: transparent;
-  padding: 40%;
+  padding: 20%;
 }
 
 .top-row,
@@ -68,9 +80,8 @@ button {
   border-left: 2px solid #000;
 }
 
-.new-game-button {
+.start-over {
   padding: 5%;
   border: 2px solid #000;
   border-radius: 50%;
-  margin-top: 10%;
 }
