@@ -12,43 +12,43 @@
     <aside class="dog-side">
       <img class="dog" src="assets/dog.png" alt="dog">
       <h2>Wins</h2>
-      <h3 id="dogWinCount"></h3>
+      <h3 id="dogWinCount">#</h3>
     </aside>
     <main>
       <h1>Cat vs. Dog | Tic-Tac-Toe</h1>
       <!-- Who's Turn? -->
-      <header class="" id="turnDisplay">
-        <p class="title">It's</p>
+      <header id="announcement">
+        <!-- <p class="title">It's</p> -->
         <img class="small-image" id="playerImage" src="assets/dog.png" alt="dog">
-        <p class="title">'s Turn</p>
+        <p class="title">  's Turn</p>
       </header>
       <!-- Winner Display -->
-      <header class="hidden" id="winnerDisplay">
+      <!-- <header class="hidden" id="winnerDisplay">
         <p class="title">Player</p>
         <img class="small-image" id="winnerImage" src="assets/dog.png" alt="dog">
         <p class="title">Wins!</p>
-      </header>
+      </header> -->
       <!-- It's a Tie! -->
-      <header class="hidden" id="tieDisplay">
+      <!-- <header class="hidden" id="tieDisplay">
         <p class="title">It's a tie! Play again.</p>
-      </header>
+      </header> -->
       <section class="gameboard" id="gameBtns">
-        <button class="spot1 btn" id="1"><!--player innerHTML--></button>
-        <button class="spot2 btn" id="2"><!--player innerHTML--></button>
-        <button class="spot3 btn" id="3"><!--player innerHTML--></button>
-        <button class="spot4 btn" id="4"><!--player innerHTML--></button>
-        <button class="spot5 btn" id="4"><!--player innerHTML--></button>
-        <button class="spot6 btn" id="5"><!--player innerHTML--></button>
-        <button class="spot7 btn" id="6"><!--player innerHTML--></button>
-        <button class="spot8 btn" id="7"><!--player innerHTML--></button>
-        <button class="spot9 btn" id="8"><!--player innerHTML--></button>
+        <button class="spot1 btn" id="spotOne"><!--player innerHTML--></button>
+        <button class="spot2 btn" id="spotTwo"><!--player innerHTML--></button>
+        <button class="spot3 btn" id="spotThree"><!--player innerHTML--></button>
+        <button class="spot4 btn" id="spotFour"><!--player innerHTML--></button>
+        <button class="spot5 btn" id="spotFive"><!--player innerHTML--></button>
+        <button class="spot6 btn" id="spotSix"><!--player innerHTML--></button>
+        <button class="spot7 btn" id="spotSeven"><!--player innerHTML--></button>
+        <button class="spot8 btn" id="spotEight"><!--player innerHTML--></button>
+        <button class="spot9 btn" id="spotNine"><!--player innerHTML--></button>
       </section>
       <button class="start-over" id="resetBtn">Start Over</button>
     </main>
     <aside class="cat-side">
       <img class="cat" src="assets/cat.png" alt="cat">
       <h2>Wins</h2>
-      <h3 id="catWinCount"></h3>
+      <h3 id="catWinCount">#</h3>
     </aside>
     <script type="text/javascript" src="./src/game.js"></script>
     <script type="text/javascript" src="./src/player.js"></script>
