@@ -15,17 +15,20 @@
       <h3 id="dogWinCount"></h3>
     </aside>
     <main>
-      <h1>Tic-Tac-Toe</h1>
+      <h1>Cat vs. Dog | Tic-Tac-Toe</h1>
+      <!-- Who's Turn? -->
       <header class="" id="turnDisplay">
         <p class="title">It's</p>
-        <img class="small-dog" src="assets/dog.png" alt="dog">
+        <img class="small-image" id="playerImage" src="assets/dog.png" alt="dog">
         <p class="title">'s Turn</p>
       </header>
+      <!-- Winner Display -->
       <header class="hidden" id="winnerDisplay">
         <p class="title">Player</p>
-        <img class="small-dog" id="playerImage" src="assets/dog.png" alt="dog">
+        <img class="small-image" id="winnerImage" src="assets/dog.png" alt="dog">
         <p class="title">Wins!</p>
       </header>
+      <!-- It's a Tie! -->
       <header class="hidden" id="tieDisplay">
         <p class="title">It's a tie! Play again.</p>
       </header>
@@ -47,8 +50,8 @@
       <h2>Wins</h2>
       <h3 id="catWinCount"></h3>
     </aside>
-    <script type="text/javascript" src="src/player.js"></script>
-    <script type="text/javascript" src="src/game.js"></script>
-    <script type="text/javascript" src="src/main.js"></script>
+    <script type="text/javascript" src="./src/game.js"></script>
+    <script type="text/javascript" src="./src/player.js"></script>
+    <script type="text/javascript" src="./src/main.js"></script>
   </body>
 </html>
