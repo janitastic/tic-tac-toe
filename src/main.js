@@ -41,7 +41,11 @@ var startOver = document.getElementById('resetBtn');
 
 //EVENT LISTENERS
 // - Window onload
-// window.addEventListener('load', pageRefresh);
+window.addEventListener('load', pageRefresh());
+// window.addEventListener('load', function() {
+//   updateScores(currentGame.player1);
+//   updateScores(currentGame.player2);
+// });
 // - click on gameboard
 gameBtns.addEventListener('click', makeAMove);
 startOver.addEventListener('click', startOver);
@@ -92,7 +96,7 @@ function checkForWin() {
     addScore(winner);
     showWinner();
     updateScores(currentGame[winner]);
-    window.setTimeout(startNewGame, 3000);
+    window.setTimeout(startNewGame, 2500);
   }
 };
 
