@@ -16,31 +16,31 @@
     </aside>
     <main>
       <h1>Tic-Tac-Toe</h1>
-      <header id="turnDisplay">
+      <header class="" id="turnDisplay">
         <p class="title">It's</p>
         <img class="small-dog" src="assets/dog.png" alt="dog">
         <p class="title">'s Turn</p>
-      <header id="winnerDisplay">
+      </header>
+      <header class="hidden" id="winnerDisplay">
         <p class="title">Player</p>
-        <img class="small-dog" src="assets/dog.png" alt="dog">
+        <img class="small-dog" id="playerImage" src="assets/dog.png" alt="dog">
         <p class="title">Wins!</p>
       </header>
-      <header id="drawDisplay">
-        <p class="title">It's a draw! Play again.</p>
+      <header class="hidden" id="tieDisplay">
+        <p class="title">It's a tie! Play again.</p>
       </header>
-      <header class=
       <section class="gameboard" id="gameBtns">
-        <button class="top-row left-column btn">Top Left</button>
-        <button class="top-row center btn">Top Center</button>
-        <button class="top-row right-column btn">Top Right</button>
-        <button class="center left-column btn">Center Left</button>
-        <button class="center btn">Center Center</button>
-        <button class="center right-column btn">Center Right</button>
-        <button class="left-column btn">Bottom Left</button>
-        <button class="btn">Bottom Center</button>
-        <button class="right-column btn">Bottom Right</button>
+        <button class="spot1 btn" id="1"><!--player innerHTML--></button>
+        <button class="spot2 btn" id="2"><!--player innerHTML--></button>
+        <button class="spot3 btn" id="3"><!--player innerHTML--></button>
+        <button class="spot4 btn" id="4"><!--player innerHTML--></button>
+        <button class="spot5 btn" id="4"><!--player innerHTML--></button>
+        <button class="spot6 btn" id="5"><!--player innerHTML--></button>
+        <button class="spot7 btn" id="6"><!--player innerHTML--></button>
+        <button class="spot8 btn" id="7"><!--player innerHTML--></button>
+        <button class="spot9 btn" id="8"><!--player innerHTML--></button>
       </section>
-      <button class="new-game-button" id="newGameBtn">Start New Game</button>
+      <button class="start-over" id="resetBtn">Start Over</button>
     </main>
     <aside class="cat-side">
       <img class="cat" src="assets/cat.png" alt="cat">
