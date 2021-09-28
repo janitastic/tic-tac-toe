@@ -64,13 +64,11 @@ header {
   height: 40%; /* will change this later with new img */
 }
 
-.small-dog,
-.small-cat {
+.small-image {
   width: 10%; /* will change this later with new img */
 }
 
-.game-dog,
-.game-cat {
+.game-piece {
   width: 100%;
 }
 
