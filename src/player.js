@@ -2,7 +2,7 @@ class Player {
   constructor(id, playerPiece) {
     this.id = id;
     this.playerPiece = playerPiece;
-    this.totalWins = 0;
+    this.totalWins = localStorage.getItem(this.id) || 0;
     this.plays = [];
     this.isWinner = false;
   }
