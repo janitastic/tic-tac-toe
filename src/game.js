@@ -1,9 +1,12 @@
 class Game {
   constructor() {
-    this.player1 = new Player('player1', 'dog');
-    this.player2 = new Player('player2', 'cat');
+    var dog = '<img class="game-piece" src="assets/dog.png" alt="dog">';
+    var cat = '<img class="game-piece" src="assets/cat.png" alt="cat">'
+    this.player1 = new Player('player1', dog);
+    this.player2 = new Player('player2', cat);
     this.hasWinner = false;
-    this.playsMade = 0;
+    this.movesMade = 0;
+    this.currentMove;
   }
 
   checkForWinner(currentPlayer) {
@@ -30,14 +33,15 @@ class Game {
     this.player1 = new Player ('player1', 'dog');
     this.player2 = new Player ('player2', 'cat');
     this.hasWinner = false;
-    this.playsMade = 0;
+    this.movesMade = 0;
   }
 
   logPlays(currentPlayer) {
-    this.playsMade++:
+    this.playsMade++;
 console.log(this.currentMove);
     currentPlayer.plays.push(parseInt(this.currentMove));
 console.log(this.currentMove);
+    this.currentMove;
   }
 };
 
