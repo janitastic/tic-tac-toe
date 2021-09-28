@@ -2,12 +2,12 @@ class Game {
   constructor() {
     this.player1 = new Player('player1', 'dog');
     this.player2 = new Player('player2', 'cat');
-    this.isWinner = false;
-    this.wins = [];
+    this.hasWinner = false;
+    this.playsMade = 0;
   }
 
-  checkWinningPlays(currentPlayer) {
-    var winningPlays = [
+  checkForWinner(currentPlayer) {
+    var winningPlays = [//refactor later
       [1, 4, 7],//0
       [2, 5, 8],//1
       [3, 6, 9],//2
@@ -19,11 +19,25 @@ class Game {
     ];
     for (var i = 0; i < winningPlays.length; i++) {
       if (currentPlayer.plays.includes(winningPlays[i][0]) && currentPlayer.plays.includes(winningPlays[i][1]) && currentPlayer.plays.includes(winningPlays[i][2])) {
-        currentPlayer.isWinner = true;
+        currentPlayer.hasWinner = true;
         currentPlayer.wins++;
-        this.isWinner = true;
+        this.hasWinner = true;
       }
     }
+  }
+
+  startOver() {
+    this.player1 = new Player ('player1', 'dog');
+    this.player2 = new Player ('player2', 'cat');
+    this.hasWinner = false;
+    this.playsMade = 0;
+  }
+
+  logPlays(currentPlayer) {
+    this.playsMade++:
+console.log(this.currentMove);
+    currentPlayer.plays.push(parseInt(this.currentMove));
+console.log(this.currentMove);
   }
 };
 
