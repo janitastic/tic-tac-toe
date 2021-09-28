@@ -85,21 +85,21 @@ function displayUser() {
 };
 
 function checkForWin() {
-  var gameWinner = currentGame.checkForWinner();
-  if (gameWinner) {
+  var winner = currentGame.checkForWinner();
+  if (winner) {
     currentGame.hasWinner = true;
     gameBtns.removeEventListener('click', makeAMove);//may update to disable
-    addScore(gameWinner);
+    addScore(winner);
     showWinner();
-    updateScores(currentGame[gameWinner]);
+    updateScores(currentGame[winner]);
     window.setTimeout(startNewGame, 3000);
   }
 };
 
-function addScore(gameWinner) {
-  var wins = currentGame[gameWinner].retrieveWinsFromStorage();
-  currentGame[gameWinner].totalWins = wins + 1;
-  currentGame[gameWinner].saveWinsToStorage();
+function addScore(winner) {
+  var wins = currentGame[winner].retrieveWinsFromStorage();
+  currentGame[winner].totalWins = wins + 1;
+  currentGame[winner].saveWinsToStorage();
 };
 
 function showWinner() {
@@ -114,8 +114,16 @@ function showWinner() {
 
 function updateScores(winnerDetails) {
   var score = document.getElementById(winnerDetails.playerPiece);
+  if (winnerDetails.id === 'player1') {
+    dogWinCount.innerText = currentGame[winnerDetails.id].totalWins;
+  } else {
+    catWinCount.innerText = currentGame[winnerDetails.id].totalWins;
+  }
 console.log('winnerDetails -', winnerDetails.playerPiece);
-  score.innerText = currentGame[winnerDetails.id].totalWins;
+
+console.log('winnerDetails.id -', winnerDetails.id);
+console.log('[winnerDetails.id].totalWins -', currentGame[winnerDetails.id].totalWins);
+console.log('winnerDetails.totalWins -', winnerDetails.totalWins);
 };
 
 function checkTie() {
