@@ -71,6 +71,21 @@ function checkForWin() {
   }
 };
 
+function showTie() {
+  if (!currentGame.hasWinner) {
+    title.innerHTML = `<p class="title">It's a tie! Play again.</p>`;
+    window.setTimeout(startNewGame, 2500);
+  }
+};
+
+function switchTurns() {
+  if (currentGame.playerTurn === 'player1') {
+    currentGame.playerTurn = 'player2';
+  } else {
+    currentGame.playerTurn = 'player1';
+  }
+};
+
 function addScore(winner) {
   var wins = currentGame[winner].retrieveWinsFromStorage();
   currentGame[winner].totalWins = wins + 1;
@@ -93,21 +108,6 @@ function updateScores(winnerDetails) {
     dogWinCount.innerText = currentGame[winnerDetails.id].totalWins;
   } else {
     catWinCount.innerText = currentGame[winnerDetails.id].totalWins;
-  }
-};
-
-function showTie() {
-  if (!currentGame.hasWinner) {
-    title.innerHTML = `<p class="title">It's a tie! Play again.</p>`;
-    window.setTimeout(startNewGame, 2500);
-  }
-};
-
-function switchTurns() {
-  if (currentGame.playerTurn === 'player1') {
-    currentGame.playerTurn = 'player2';
-  } else {
-    currentGame.playerTurn = 'player1';
   }
 };
 
