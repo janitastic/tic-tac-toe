@@ -6,7 +6,6 @@ class Game {
     this.hasWinner = false;
     this.playerTurn = firstPlayer;
     this.isTie = false;
-    // this.board = [1,2,3,4,5,6,7,8,9];
     this.table = {
       spotOne: 1,
       spotTwo: 2,
@@ -18,7 +17,7 @@ class Game {
       spotEight: 8,
       spotNine: 9
     }
-  }
+  };
 
   checkForWinner() {
     var button = this.table;
@@ -51,25 +50,12 @@ class Game {
     return winner;
   }
 
-  // checkForWinner() {
-  //   var winner = ``;
-  //   var winningPlays = [//refactor later
-  //     [1, 4, 7],//0
-  //     [2, 5, 8],//1
-  //     [3, 6, 9],//2
-  //     [1, 2, 3],//3
-  //     [4, 5, 6],//4
-  //     [7, 8, 9],//5
-  //     [1, 5, 9],//6
-  //     [3, 5, 7]//7
-  //   ];
-  // }
-
   checkForTie() {
     if (!this.hasWinner && this.movesMade === 9) {
       this.isTie = true;
     }
-  }
+    return;
+  };
 
   resetGame() {
     if (this.playerTurn === 'player1') {
@@ -79,13 +65,3 @@ class Game {
     }
   }
 };
-
-
-/*
-Additionally file should include -
-- A way to keep track of the data for game gameboard
-- A way to keep track of the Game's board data for win conditions
-- A way to check the Game's board data for win conditions
-- A way to detect when a game is a draw (no one has won)
-- A way to reset the Game's board to begin a new game
-*/

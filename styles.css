@@ -82,11 +82,11 @@ h3 {
 
 .dog,
 .cat {
-  height: 40%; /* will change this later with new img */
+  height: 40%;
 }
 
 .small-image {
-  width: 10%; /* will change this later with new img */
+  width: 10%;
   margin: 1%;
 }
 
