@@ -72,7 +72,6 @@ function checkForWin() {
   }
 };
 
-
 function switchTurns() {
   if (currentGame.playerTurn === 'player1') {
     currentGame.playerTurn = 'player2';
