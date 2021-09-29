@@ -65,7 +65,7 @@ function checkForWin() {
     showWinner();
     updateScores(currentGame[winner]);
     window.setTimeout(startNewGame, 2500);
-  } else if (!currentGame.hasWinner && currentGame.isTie) {
+  } else if (!currentGame.hasWinner && currentGame.movesMade === 9) {
     title.innerHTML = `<p class="title">It's a tie! Play again.</p>`;
     window.setTimeout(startNewGame, 2500);
   }
