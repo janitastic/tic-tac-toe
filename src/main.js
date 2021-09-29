@@ -1,5 +1,4 @@
 var currentGame = new Game('player1');
-console.log(currentGame);
 
 var gameBtns = document.getElementById('gameBtns');
 var title = document.getElementById('announcement');
@@ -10,13 +9,11 @@ var winnerImage = document.getElementById('winnerImage');
 var startOver = document.getElementById('resetBtn');
 
 //EVENT LISTENERS
-// - Window onload
 window.addEventListener('load', pageRefresh);
 gameBtns.addEventListener('click', makeAMove);
 startOver.addEventListener('click', resetGame);
 
 //FUNCTIONS
-//Game Board Display Player Function
 function makeAMove(event) {
   if (typeof currentGame.table[event.target.id] === 'number') {
     markSpot(event.target.id);
@@ -56,7 +53,7 @@ function checkForWin() {
   var winner = currentGame.checkForWinner();
   if (winner) {
     currentGame.hasWinner = true;
-    gameBtns.removeEventListener('click', makeAMove);//may update to disable
+    gameBtns.removeEventListener('click', makeAMove);
     addScore(winner);
     showWinner();
     showTie();
@@ -117,7 +114,7 @@ function displayNextTurn() {
 
 function startNewGame() {
   currentGame.resetGame();
-  gameBtns.addEventListener('click', makeAMove);//renable buttons?
+  gameBtns.addEventListener('click', makeAMove);
   displayUser();
   displayNextTurn();
 };
@@ -130,16 +127,4 @@ function resetGame() {
 function pageRefresh() {
   updateScores(currentGame.player1);
   updateScores(currentGame.player2);
-};
-
-
-
-// -show & hide elements
-
-function show(element) {
-  element.classList.remove('hidden');
-};
-
-function hide(element) {
-  element.classList.add('hidden');
 };
