@@ -1,6 +1,6 @@
 # Dog vs. Cat Tic-Tac-Toe
 
-![App Demo](linky goes here)
+![App Demo](https://github.com/janitastic/tic-tac-toe/blob/main/assets/game.gif)
 
 ## About
 Dog vs. Cat tic-tac-toe is a challenge build a user interactive front-end application using JavaScript, HTML, and CSS.
