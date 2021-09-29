@@ -34,12 +34,12 @@ function markSpot(buttonId) {
 };
 
 function displayUser() {
-  for (var property in currentGame.table) {
-    var markButton = document.getElementById(property);
+  for (var spot in currentGame.table) {
+    var markButton = document.getElementById(spot);
 
-    if (currentGame.table[property] === 'player1') {
+    if (currentGame.table[spot] === 'player1') {
       markButton.innerHTML = '<img class="game-piece" src="assets/dog.png" alt="dog">';
-    } else if (currentGame.table[property] === 'player2') {
+    } else if (currentGame.table[spot] === 'player2') {
       markButton.innerHTML = '<img class="game-piece" src="assets/cat.png" alt="cat">';
     } else {
       markButton.innerHTML = '';
@@ -67,16 +67,11 @@ function checkForWin() {
     updateScores(currentGame[winner]);
     window.setTimeout(startNewGame, 2500);
   } else if (!currentGame.hasWinner && currentGame.movesMade === 9) {
-    showTie();
-  }
-};
-
-function showTie() {
-  if (!currentGame.hasWinner) {
     title.innerHTML = `<p class="title">It's a tie! Play again.</p>`;
     window.setTimeout(startNewGame, 2500);
   }
 };
+
 
 function switchTurns() {
   if (currentGame.playerTurn === 'player1') {
