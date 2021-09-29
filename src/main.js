@@ -1,56 +1,19 @@
 var currentGame = new Game('player1');
 console.log(currentGame);
 
-//1. What represent the data model?
-  // player arrays - accessing player arrays
-  // whatever we're storing in currentGame - updating the dataModel
-
-//2. Am I updating the currentGame?
-  // yes, on new Game?
-
-//3. Currently, are we updating the dataModel?
-  // updating DOM on image src, and innerHTML
-  // currentGame is the dataModel that we're storing
-  // update the dataModel first - move currentGame to the top.
-    // currentGame is storing an instance of the game class.
-      // then we can say that we are updating the data model but using the Game properties to render DOM elements
-
-
-// QUERY SELECTORS
-// Will need the following
-//   - "all" game board buttons
 var gameBtns = document.getElementById('gameBtns');
 var title = document.getElementById('announcement');
-var playerSpot = document.querySelectorAll('.btn');//may not need this
-//   - player turn title
-var turnDisplay = document.getElementById('turnDisplay');//may remove
-//   - player turn image/icon/token
-//   - winner display title
-var winnerDisplay = document.getElementById('winnerDisplay');//may remove
-//     - maybe winner image/icon/token, if can't use player turn img
-//   - "it's a draw" display title
-var tieDisplay = document.getElementById('tieDisplay');//may remove
-//   - Player 1 win count
-//   - Player 2 win count
 var playerImage = document.getElementById('playerImage');
 var dogWinCount = document.getElementById('dogWinCount');
 var catWinCount = document.getElementById('catWinCount');
 var winnerImage = document.getElementById('winnerImage');
-//   - Start Over button
 var startOver = document.getElementById('resetBtn');
 
 //EVENT LISTENERS
 // - Window onload
-window.addEventListener('load', pageRefresh());
-// window.addEventListener('load', function() {
-//   updateScores(currentGame.player1);
-//   updateScores(currentGame.player2);
-// });
-// - click on gameboard
+window.addEventListener('load', pageRefresh);
 gameBtns.addEventListener('click', makeAMove);
-startOver.addEventListener('click', startOver);
-// - click on new game button
-
+startOver.addEventListener('click', resetGame);
 
 //FUNCTIONS
 //Game Board Display Player Function
@@ -59,10 +22,11 @@ function makeAMove(event) {
     markSpot(event.target.id);
     displayUser();
     checkForWin();
-    checkTie();
-    if (!currentGame.hasWinner && !currentGame.checkForTie()) {
+    if (!currentGame.hasWinner && !currentGame.isTie) {
       switchTurns();
       displayNextTurn();
+    } else {
+      showTie();
     }
   }
 };
@@ -95,6 +59,7 @@ function checkForWin() {
     gameBtns.removeEventListener('click', makeAMove);//may update to disable
     addScore(winner);
     showWinner();
+    showTie();
     updateScores(currentGame[winner]);
     window.setTimeout(startNewGame, 2500);
   }
@@ -123,17 +88,12 @@ function updateScores(winnerDetails) {
   } else {
     catWinCount.innerText = currentGame[winnerDetails.id].totalWins;
   }
-console.log('winnerDetails -', winnerDetails.playerPiece);
-
-console.log('winnerDetails.id -', winnerDetails.id);
-console.log('[winnerDetails.id].totalWins -', currentGame[winnerDetails.id].totalWins);
-console.log('winnerDetails.totalWins -', winnerDetails.totalWins);
 };
 
-function checkTie() {
-  if (currentGame.checkForTie()) {
-    title.innerHTML = `<p class="title">It's a tie! Play again.</p>`
-    window.setTimeout(startNewGame, 3000);
+function showTie() {
+  if (currentGame.isTie) {
+    title.innerHTML = `<p class="title">It's a tie! Play again.</p>`;
+    window.setTimeout(startNewGame, 2500);
   }
 };
 
@@ -157,17 +117,14 @@ function displayNextTurn() {
 
 function startNewGame() {
   currentGame.resetGame();
-  gameBtns.addEventListener('click', makeAMove);//can we do this with a toggle?
+  gameBtns.addEventListener('click', makeAMove);//renable buttons?
   displayUser();
   displayNextTurn();
 };
 
-function startOver() {
-  currentGame.player1.totalWins = 0;
-  currentGame.player1.saveWinsToStorage();
-  currentGame.player2.totalWins = 0;
-  currentGame.player2.saveWinsToStorage();
-  pageRefresh();
+function resetGame() {
+  localStorage.clear();
+  location.reload();
 };
 
 function pageRefresh() {

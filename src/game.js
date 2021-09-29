@@ -69,6 +69,7 @@ class Game {
     if (!this.hasWinner && this.movesMade === 9) {
       this.isTie = true;
     }
+    return;
   }
 
   resetGame() {
