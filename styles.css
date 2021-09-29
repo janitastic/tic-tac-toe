@@ -5,7 +5,8 @@
 body {
   display: flex;
   height: 100vh;
-  margin: 0%
+  margin: 0%;
+  background-image: url("assets/paw-print-background.jpeg");
 }
 
 main {
@@ -14,6 +15,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(255, 255, 255, .60);
 }
 
 header {
@@ -22,8 +24,27 @@ header {
   align-items: center;
 }
 
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 4em;
+  margin-top: 5%;
+}
+
 .hidden {
   display: none;
+}
+
+.title {
+  font-size: 3em;
+  color: orange;
+  margin: 0;
 }
 
 .btn {
@@ -56,7 +77,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid pink; /* remove later */
+  background-color: rgba(255, 165, 0, .80);
 }
 
 .dog,
@@ -66,10 +87,11 @@ header {
 
 .small-image {
   width: 10%; /* will change this later with new img */
+  margin: 1%;
 }
 
 .game-piece {
-  width: 100%;
+  width: 70%;
 }
 
 .gameboard {
@@ -84,12 +106,19 @@ button {
   cursor: pointer;
   border: none;
   background-color: transparent;
-  padding: 20%;
+  padding: 20% 0%;
 }
 
 .start-over {
-  padding: 2%;
+  padding: 2% 5% 2% 5%;
   border: 2px solid #000;
-  border-radius: 50%;
-  margin-top: 5%;
+  background-color: rgb(255 165 0 / 90%);
+  border-radius: 1em;
+  margin: 5%;
+  font-size: 2em;
+}
+
+.start-over:hover {
+  color: #FFF;
+  background-color: #000;
 }
