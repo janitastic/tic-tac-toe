@@ -22,8 +22,6 @@ function makeAMove(event) {
     if (!currentGame.hasWinner && !currentGame.isTie) {
       switchTurns();
       displayNextTurn();
-    } else {
-      showTie();
     }
   }
 };
@@ -49,6 +47,16 @@ function displayUser() {
   }
 };
 
+function pageRefresh() {
+  updateScores(currentGame.player1);
+  updateScores(currentGame.player2);
+};
+
+function resetGame() {
+  localStorage.clear();
+  location.reload();
+};
+
 function checkForWin() {
   var winner = currentGame.checkForWinner();
   if (winner) {
@@ -56,9 +64,10 @@ function checkForWin() {
     gameBtns.removeEventListener('click', makeAMove);
     addScore(winner);
     showWinner();
-    showTie();
     updateScores(currentGame[winner]);
     window.setTimeout(startNewGame, 2500);
+  } else if (!currentGame.hasWinner && currentGame.movesMade === 9) {
+    showTie();
   }
 };
 
@@ -88,7 +97,7 @@ function updateScores(winnerDetails) {
 };
 
 function showTie() {
-  if (currentGame.isTie) {
+  if (!currentGame.hasWinner) {
     title.innerHTML = `<p class="title">It's a tie! Play again.</p>`;
     window.setTimeout(startNewGame, 2500);
   }
@@ -117,14 +126,4 @@ function startNewGame() {
   gameBtns.addEventListener('click', makeAMove);
   displayUser();
   displayNextTurn();
-};
-
-function resetGame() {
-  localStorage.clear();
-  location.reload();
-};
-
-function pageRefresh() {
-  updateScores(currentGame.player1);
-  updateScores(currentGame.player2);
 };
