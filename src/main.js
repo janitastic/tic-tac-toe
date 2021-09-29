@@ -36,7 +36,6 @@ function markSpot(buttonId) {
 function displayUser() {
   for (var spot in currentGame.table) {
     var markButton = document.getElementById(spot);
-
     if (currentGame.table[spot] === 'player1') {
       markButton.innerHTML = '<img class="game-piece" src="assets/dog.png" alt="dog">';
     } else if (currentGame.table[spot] === 'player2') {
@@ -81,8 +80,8 @@ function switchTurns() {
 };
 
 function addScore(winner) {
-  var wins = currentGame[winner].retrieveWinsFromStorage();
-  currentGame[winner].totalWins = wins + 1;
+  var accumulatedWins = currentGame[winner].retrieveWinsFromStorage();
+  currentGame[winner].totalWins = accumulatedWins + 1;
   currentGame[winner].saveWinsToStorage();
 };
 
@@ -97,7 +96,6 @@ function showWinner() {
 };
 
 function updateScores(winnerDetails) {
-  var score = document.getElementById(winnerDetails.playerPiece);
   if (winnerDetails.id === 'player1') {
     dogWinCount.innerText = currentGame[winnerDetails.id].totalWins;
   } else {
@@ -116,7 +114,7 @@ function displayNextTurn() {
 };
 
 function startNewGame() {
-  currentGame.resetGame();
+  currentGame.switchPlayers();
   gameBtns.addEventListener('click', makeAMove);
   displayUser();
   displayNextTurn();
