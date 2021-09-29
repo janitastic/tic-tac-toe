@@ -5,7 +5,7 @@
 ## About
 Dog vs. Cat tic-tac-toe is a challenge build a user interactive front-end application using JavaScript, HTML, and CSS.
 
-## Want to log your own ideas? [Try it out!](https://janitastic.github.io/tic-tac-toe/)
+## Want to play? [Jump in!](https://janitastic.github.io/tic-tac-toe/)
 
 ### Instructions
 
